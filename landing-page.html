@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseane Cristine Winiarski Moro — Psicóloga Clínica e Neuropsicóloga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sage-50: #f4f7f4;
+            --sage-100: #e4ebe5;
+            --sage-200: #c9d7cb;
+            --sage-300: #a3b8a6;
+            --sage-400: #7d9681;
+            --sage-500: #5f7a63;
+            --sage-600: #4b6150;
+            --sage-700: #3d4f41;
+            --sage-800: #344137;
+            --sage-900: #2c372e;
+            --warm-white: #FAFBF9;
+            --text-primary: #2c372e;
+            --text-secondary: #5f6b5e;
+            --text-light: #8a9489;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--warm-white);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ═══════════ NAV ═══════════ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(250, 251, 249, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(196, 212, 198, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.8rem 2rem;
+            box-shadow: 0 1px 20px rgba(0,0,0,0.04);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--sage-700);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-600);
+        }
+
+        /* ═══════════ HERO ═══════════ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--warm-white) 0%, var(--sage-50) 50%, var(--sage-100) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 15%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(163, 184, 166, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            left: -8%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(163, 184, 166, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 680px;
+            z-index: 1;
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.35rem 1.2rem;
+            background: var(--sage-100);
+            border: 1px solid var(--sage-200);
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--sage-600);
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 400;
+            color: var(--sage-800);
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--sage-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-crp {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            margin-bottom: 2.5rem;
+        }
+
+        .divider {
+            width: 50px;
+            height: 1px;
+            background: var(--sage-300);
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 480px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.9;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 2rem;
+            background: var(--sage-600);
+            color: var(--warm-white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(75, 97, 80, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--sage-500);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(75, 97, 80, 0.3);
+        }
+
+        .btn-whatsapp svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ═══════════ ABOUT ═══════════ */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--warm-white);
+        }
+
+        .about-inner {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--sage-400);
+            margin-bottom: 1.2rem;
+        }
+
+        .about h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: var(--sage-800);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.95;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .about-text p + p {
+            margin-top: 1.2rem;
+        }
+
+        .approach-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 2rem;
+        }
+
+        .pill {
+            padding: 0.4rem 1rem;
+            background: var(--sage-50);
+            border: 1px solid var(--sage-200);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--sage-600);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        /* ═══════════ SERVICES ═══════════ */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--sage-50);
+        }
+
+        .services-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .services-inner > h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: var(--sage-800);
+            margin-bottom: 0.4rem;
+        }
+
+        .services-inner > .section-label {
+            text-align: center;
+        }
+
+        .services-inner > h2 {
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--warm-white);
+            border: 1px solid var(--sage-200);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--sage-300);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--sage-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--sage-800);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        /* ═══════════ CTA ═══════════ */
+        .cta {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--sage-100) 0%, var(--sage-200) 100%);
+        }
+
+        .cta-inner {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--sage-800);
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        /* ═══════════ FOOTER ═══════════ */
+        footer {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            background: var(--sage-800);
+            color: rgba(244, 247, 244, 0.5);
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        footer .footer-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: rgba(244, 247, 244, 0.7);
+            margin-bottom: 0.4rem;
+        }
+
+        footer .footer-crp {
+            margin-bottom: 0.8rem;
+        }
+
+        /* ═══════════ RESPONSIVE ═══════════ */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.3rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .about h2, .services-inner > h2, .cta h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <div class="nav-logo">Joseane Moro</div>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-badge">Psicóloga Clínica & Neuropsicóloga</div>
+            <h1>Joseane Cristine<br>Winiarski Moro</h1>
+<div class="divider"></div>
+            <p>Um espaço acolhedor para o cuidado com a sua saúde emocional e cognitiva.</p>
+            <a href="https://wa.me/5541999949484?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento." class="btn-whatsapp" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.29 9.29 0 01-4.727-1.285l-.336-.2-3.483.917.93-3.414-.217-.347a9.29 9.29 0 01-1.414-4.957c0-5.127 4.18-9.306 9.33-9.306 2.492 0 4.855.972 6.618 2.736a9.265 9.265 0 012.736 6.614c-.003 5.13-4.18 9.306-9.33 9.306l.017.052zM20.52 3.449C18.44 1.245 15.34 0 12.049 0 5.464 0 .104 5.33.101 11.912c0 2.099.548 4.148 1.596 5.964L0 24l4.204-1.102a11.86 11.86 0 005.646 1.432h.005c6.585 0 11.946-5.332 11.949-11.914 0-3.192-1.243-6.188-3.484-8.425z"/></svg>
+                Agendar atendimento
+            </a>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="about" id="sobre">
+        <div class="about-inner">
+            <div class="section-label">Sobre Mim & Abordagem</div>
+
+            <div class="divider" style="margin: 0 0 1.5rem;"></div>
+            <div class="about-text">
+                <p>Ofereço um espaço de escuta ativa, ética e baseada em evidências científicas para auxiliar no manejo das emoções, superação de demandas clínicas e desenvolvimento pessoal.</p>
+                <p>Minha atuação clínica é fundamentada na <strong>Terapia Cognitivo-Comportamental (TCC)</strong> e na <strong>Terapia do Esquema</strong>, abordagens que buscam identificar e reestruturar padrões de pensamentos e comportamentos disfuncionais.</p>
+                <p>Possuo Especialização em Neuropsicologia e meu foco é a Reabilitação, atuando diretamente na estimulação e recuperação de funções cognitivas (como memória, atenção e funções executivas), promovendo mais autonomia e qualidade de vida aos pacientes.</p>
+            </div>
+            <div class="approach-pills">
+                <span class="pill">TCC</span>
+                <span class="pill">Terapia do Esquema</span>
+                <span class="pill">Neuropsicologia</span>
+                <span class="pill">Reabilitação Cognitiva</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="services" id="servicos">
+        <div class="services-inner">
+            <div class="section-label">Serviços</div>
+            <h2>Como posso te ajudar</h2>
+            <div class="divider" style="margin: 0 auto 0;"></div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>Psicoterapia Clínica</h3>
+                    <p>Atendimento individual focado em regulação emocional utilizando a Terapia Cognitivo-Comportamental (TCC) e a Terapia do Esquema.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Reabilitação Neuropsicológica</h3>
+                    <p>Investigação do perfil cognitivo e intervenções práticas para reabilitar funções cerebrais impactadas por lesões, condições neurológicas ou neurodesenvolvimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contato">
+        <div class="cta-inner">
+            <div class="section-label">Contato</div>
+            <h2>Agende seu atendimento</h2>
+            <p>Se você busca suporte terapêutico ou precisa de um processo de reabilitação neuropsicológica, entre em contato para verificar a disponibilidade de horários.</p>
+            <a href="https://wa.me/5541999949484?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento." class="btn-whatsapp" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.29 9.29 0 01-4.727-1.285l-.336-.2-3.483.917.93-3.414-.217-.347a9.29 9.29 0 01-1.414-4.957c0-5.127 4.18-9.306 9.33-9.306 2.492 0 4.855.972 6.618 2.736a9.265 9.265 0 012.736 6.614c-.003 5.13-4.18 9.306-9.33 9.306l.017.052zM20.52 3.449C18.44 1.245 15.34 0 12.049 0 5.464 0 .104 5.33.101 11.912c0 2.099.548 4.148 1.596 5.964L0 24l4.204-1.102a11.86 11.86 0 005.646 1.432h.005c6.585 0 11.946-5.332 11.949-11.914 0-3.192-1.243-6.188-3.484-8.425z"/></svg>
+                Clique aqui para falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-name">Joseane Cristine Winiarski Moro</div>
+        <div class="footer-crp">CRP-PR 08/37674</div>
+        <p>© 2026 — Todos os direitos reservados</p>
+    </footer>
+
+    <!-- NAV SCROLL EFFECT -->
+    <script>
+        window.addEventListener('scroll', function() {
+            var nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>
